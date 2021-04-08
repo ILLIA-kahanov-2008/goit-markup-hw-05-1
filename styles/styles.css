@@ -9,9 +9,9 @@
   --logo-font: 'Raleway', sans-serif;
   --filter-color: #f5f4fa;
   --hero-bg-color: #c4c4c4;
-  --one-item: 1;
+  --number-of-items: 3;
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --animation-duration: 250ms;
 }
 html {
   box-sizing: border-box;
@@ -76,6 +76,25 @@ img {
 .section {
   padding-top: 94px;
 }
+
+.button {
+  padding: 10px 32px;
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  transition: background-color var(--animation);
+}
+.button:hover,
+.button:focus {
+  background-color: #188ce8;
+}
 /* --header-- */
 .header {
   border-bottom: 1px solid #ececec;
@@ -106,7 +125,7 @@ img {
   color: var(--title-color);
   padding-top: 32px;
   padding-bottom: 31px;
-  transition: color var(--animation-duration) var(--timing-function);
+  transition: color var(--animation);
 }
 .contacts .header-link {
   color: var(--main-text-color);
@@ -188,9 +207,10 @@ img {
 .footer-link {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
-  transition: color var(--animation-duration) var(--timing-function);
+  transition: color var(--animation);
 }
-.footer .footer-social-title {
+.footer .footer-social-title,
+.footer .footer-subscription-title {
   margin-top: 12px;
   margin-bottom: 20px;
   color: var(--white-color);
@@ -201,6 +221,41 @@ img {
 .footer .social-icons-link .icon {
   fill: var(--white-color);
 }
+.subscription {
+  /* display: flex; */
+}
+.subscription input {
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+.subscription .button {
+  position: absolute;
+  margin-left: 12px;
+  padding-left: 28px;
+  /* opacity: .3; */
+}
+.subscription .button::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  vertical-align: middle;
+  background-image: url(../images/icons.svg#icon-send);
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  margin-left: 10px;
+  /* margin: 13px 28px 13px 10px;  */
+}
+
 /* --index.html-- */
 .hero {
   background-color: var(--hero-bg-color);
@@ -229,24 +284,6 @@ img {
   text-transform: uppercase;
   color: var(--white-color);
 }
-.button {
-  padding: 10px 32px;
-  background-color: var(--accent-color);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.875;
-  letter-spacing: 0.06em;
-  color: var(--white-color);
-  cursor: pointer;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: none;
-  transition: background-color var(--animation-duration) var(--timing-function);
-}
-.button:hover,
-.button:focus {
-  background-color: #188ce8;
-}
 .title {
   margin-bottom: 50px;
   text-align: center;
@@ -266,8 +303,9 @@ img {
 .features-item,
 .team-member-item,
 .footer-item {
+  --number-of-items: 4;
   flex-basis: calc(
-    (100% - (30px * var(--one-item) * 4)) / (var(--one-item) * 4)
+    (100% - (30px * var(--number-of-items))) / var(--number-of-items)
   );
   margin-left: 30px;
 }
@@ -294,6 +332,7 @@ img {
 }
 .features-item-title,
 .footer-social-title,
+.footer-subscription-title,
 .work-about-item-title {
   margin-bottom: 10px;
   font-weight: 700;
@@ -312,7 +351,7 @@ img {
 .work-about-item {
   position: relative;
   flex-basis: calc(
-    (100% - (30px * var(--one-item) * 3)) / (var(--one-item) * 3)
+    (100% - (30px * var(--number-of-items))) / var(--number-of-items)
   );
   margin-left: 30px;
 }
@@ -364,7 +403,7 @@ img {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--animation-duration) var(--timing-function);
+  transition: background-color var(--animation);
 
   /* background-color: rgba(255, 255, 255, 0.1); */
 }
@@ -383,10 +422,12 @@ img {
   width: 20px;
   height: 20px;
   fill: var(--icon-color);
-  transition: fill var(--animation-duration) var(--timing-function);
+  transition: fill var(--animation);
 }
 .clients-list-item {
-  width: calc((100% - (30px * var(--one-item) * 6)) / (var(--one-item) * 6));
+  width: calc(
+    (100% - (30px * var(--number-of-items) * 2)) / (var(--number-of-items) * 2)
+  );
   margin-left: 30px;
 }
 .clients-link {
@@ -396,7 +437,7 @@ img {
   border: 1px solid var(--icon-color);
   border-radius: 4px;
   height: 90px;
-  transition: border-color var(--animation-duration) var(--timing-function);
+  transition: border-color var(--animation);
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -404,7 +445,7 @@ img {
 }
 .clients-list .icon {
   fill: var(--icon-color);
-  transition: fill var(--animation-duration) var(--timing-function);
+  transition: fill var(--animation);
 }
 .clients-link:hover .icon,
 .clients-link:focus .icon {
@@ -421,8 +462,7 @@ img {
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)); */
   background-color: rgba(0, 0, 0, 0.2);
   transform: scale(1);
-  transition: transform 500ms var(--timing-function),
-    opacity var(--animation-duration) var(--timing-function);
+  transition: transform 500ms var(--timing-function), opacity var(--animation);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -459,7 +499,7 @@ img {
   width: 11px;
   height: 11px;
   fill: #000;
-  transition: fill var(--animation-duration) var(--timing-function);
+  transition: fill var(--animation);
 }
 .close-btn:hover .close-icon,
 .close-btn:focus .close-icon {
@@ -489,9 +529,8 @@ img {
   border-radius: 4px;
   padding: 6px 22px;
   cursor: pointer;
-  transition: box-shadow var(--animation-duration) var(--timing-function),
-    color var(--animation-duration) var(--timing-function),
-    background-color var(--animation-duration) var(--timing-function);
+  transition: box-shadow var(--animation), color var(--animation),
+    background-color var(--animation);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -509,7 +548,7 @@ img {
 .portfolio-item {
   position: relative;
   flex-basis: calc(
-    (100% - (30px * var(--one-item) * 3)) / (var(--one-item) * 3)
+    (100% - (30px * var(--number-of-items))) / var(--number-of-items)
   );
   margin-left: 30px;
   margin-top: 30px;
@@ -521,7 +560,7 @@ img {
   border: 1px solid #eeeeee;
   color: var(--main-text-color);
   background-color: var(--white-color);
-  transition: box-shadow var(--animation-duration) var(--timing-function);
+  transition: box-shadow var(--animation);
 }
 .portfolio-item-link:hover,
 .portfolio-item-link:focus {
@@ -553,8 +592,7 @@ img {
   letter-spacing: 0.03em;
   color: var(--white-color);
   background-color: rgba(33, 150, 243, 0.9);
-  transition: transform var(--animation-duration) var(--timing-function),
-    opacity var(--animation-duration) var(--timing-function);
+  transition: transform var(--animation), opacity var(--animation);
 }
 .portfolio-item-link:hover .portfolio-overlay-text,
 .portfolio-item-link:focus .portfolio-overlay-text {
