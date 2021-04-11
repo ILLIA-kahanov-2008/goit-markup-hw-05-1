@@ -198,6 +198,20 @@ img {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+.footer .container {
+  background-color: lightgreen;
+  display: flex;
+  justify-content: ;
+}
+.footer-list {
+}
+.footer-item {
+  background-color: grey;
+  flex-basis: calc((50% - 45px) / 2);
+}
+.footer-item:last-child {
+  flex-basis: calc (50% - 15px);
+}
 .footer .logo-link {
   margin-bottom: 20px;
 }
@@ -221,11 +235,16 @@ img {
 .footer .social-icons-link .icon {
   fill: var(--white-color);
 }
-.subscription {
-  /* display: flex; */
-}
+/* .subscription {
+  display: flex;  
+} */
 .subscription input {
-  position: relative;
+  /* position: relative; */
+  display: inline-block;
+  padding-left: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 358px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -238,13 +257,16 @@ img {
   border-radius: 4px;
 }
 .subscription .button {
-  position: absolute;
+  /* position: absolute; */
+  display: inline-block;
   margin-left: 12px;
-  padding-left: 28px;
+  padding-left: 29px;
+  padding-right: 28px;
   /* opacity: .3; */
 }
-.subscription .button::after {
+/* .subscription .button::after {
   position: absolute;
+  z-index: 2;
   display: inline-block;
   content: '';
   vertical-align: middle;
@@ -253,7 +275,15 @@ img {
   height: 24px;
   fill: #fff;
   margin-left: 10px;
-  /* margin: 13px 28px 13px 10px;  */
+  /* margin: 13px 28px 13px 10px;
+} */
+
+.send-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
 }
 
 /* --index.html-- */
@@ -295,14 +325,12 @@ img {
 .features-list,
 .work-about-list,
 .team-member-list,
-.clients-list,
-.footer-list {
+.clients-list {
   display: flex;
   margin-left: -30px;
 }
 .features-item,
-.team-member-item,
-.footer-item {
+.team-member-item {
   --number-of-items: 4;
   flex-basis: calc(
     (100% - (30px * var(--number-of-items))) / var(--number-of-items)
@@ -474,12 +502,13 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   background-color: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  text-align: center;
 }
 .close-btn {
   position: absolute;
