@@ -52,7 +52,7 @@ img {
 input {
   margin: 0;
   padding: 0;
-  border: none;
+  /* border: none; */
 }
 .visually-hidden {
   position: absolute !important;
@@ -413,7 +413,7 @@ input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding-top: 40px;
+  padding: 40px;
   width: 528px;
   height: 581px;
   background-color: var(--white-color);
@@ -454,16 +454,96 @@ input {
   color: var(--title-color);
   margin-bottom: 12px;
 }  
-.order-form {
-  padding-left: 40px;
-  padding-right: 40px;
-}
 .order-form-item {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: var(--main-text-color);
+  /* padding-bottom: 10px; */
+  /* display: flex;
+  flex-direction: column; */
+  background-color: lightgreen;
+
+}
+.order-form-field {
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  height: 40px;
+  padding-left: 42px;
+  margin-bottom: 10px;
+  background-color: lightblue;
+}
+
+.order-form-label {
+  /* margin-bottom: 4px; */
+  background-color: yellowgreen;
+  
+}
+.order-form-textarea:placeholder-shown {
+  /* color: rgba(117, 117, 117, 0.5); */
+  background-color: red;
+  
+}
+.order-form-textarea {  
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.143;
+}
+
+.order-form-item .icon-person {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  /* stroke: #000; */
+  /* fill: var(--accent-color); */
+  width: 18px;
+  height: 18px;
+}
+.order-form-item span {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;  
+  background-color: rgba(128, 128, 128, 0.404);
 }
 .order-form-item .icon-mail {
-  stroke: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 15px;
+}
+.order-form-field:focus + span>.icon {
+  fill: var(--accent-color);
+}
+.order-form-field:focus {
+  border: 1px solid var(--accent-color);
+  outline: none;
+}
+/* .order-form-send {
+  position: absolute;
+  
+  left: 50%;
+  transform: translateX(-50%);
+} */
+
+.order-form-checkbox::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/icons.svg/#icon-checked);
+  
 }
 
 /* Portfolio.html */
@@ -603,10 +683,8 @@ input {
 .subscription {
   display: inline-flex;  
 }
-.subscription input {
+.subscription-field {
   padding-left: 16px;
-  padding-top: 14px;
-  padding-bottom: 14px;
   width: 358px;
   font-weight: 400;
   font-size: 16px;

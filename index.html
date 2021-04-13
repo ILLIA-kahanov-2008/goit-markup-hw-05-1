@@ -538,8 +538,14 @@
         <div class="footer-item">
           <h3 class="footer-item-title">Подпишитесь на рассылку</h3>
           <form action="" class="subscription">
-            <input type="email" name="e-mail" id="" placeholder="E-mail" />
-            <button type="submit" class="button">
+            <input
+              type="email"
+              name="e-mail"
+              id=""
+              placeholder="E-mail"
+              class="subscription-field"
+            />
+            <button type="submit" class="button subscription-send">
               Подписаться
               <svg class="send-icon">
                 <use href="./images/icons.svg#icon-send"></use>
@@ -562,18 +568,28 @@
         </h2>
         <form action="" class="order-form">
           <div class="order-form-item">
-            <label for="customer-name" class="order-form-label"
-              >Имя
-              <input type="text" name="name" id="customer-name" class="order-form-input" />
-              <!-- <svg class="icon icon-person">
-                <use href="./images/icons.svg#icon-person"></use>
-              </svg> -->
+            <label for="customer-name" class="order-form-label">Имя
+              <svg class="icon icon-person">
+              <use href="./images/icons.svg#icon-person-focus"></use>
+            </svg>
             </label>
+            <input
+              type="text"
+              name="name"
+              id="customer-name"
+              class="order-form-field"
+            />
+            
           </div>
           <div class="order-form-item">
             <label for="customer-telefone" class="order-form-label"
               >Телефон
-              <input type="tel" name="telefone" id="customer-telefone" class="order-form-input" />
+              <input
+                type="tel"
+                name="telefone"
+                id="customer-telefone"
+                class="order-form-field"
+              />
               <!-- <svg class="icon icon-telefone">
                 <use href="./images/icons.svg#icon-telefone"></use>
               </svg> -->
@@ -582,10 +598,17 @@
           <div class="order-form-item">
             <label for="customer-mail" class="order-form-label"
               >Почта
-              <input type="email" name="mail" id="customer-mail" class="order-form-input" />
-               <!-- <svg class="icon icon-mail">
-                <use href="./images/icons.svg#icon-mail-stroke"></use>
-              </svg> -->
+              <input
+                type="email"
+                name="mail"
+                id="customer-mail"
+                class="order-form-field"
+              />
+              <span>
+                <svg class="icon icon-mail">
+                  <use href="./images/icons.svg#icon-mail-stroke"></use>
+                </svg>
+              </span>
             </label>
           </div>
           <div class="order-form-item">
@@ -595,27 +618,26 @@
                 name="comments"
                 id="customer-comments"
                 cols="30"
-                rows="10"
-                class="order-form-input"
+                rows="6"
+                class="order-form-textarea"
                 placeholder="Введите текст"
-              >
-              </textarea> 
-            </label>              
+              ></textarea>
+            </label>
           </div>
-          
-         
-          <input
-            type="checkbox"
-            name="lisence"
-            id=""
-            checked
-            class="order-form-input"
-          />
-          <label for="" class="order-form-label"
-            >Соглашаюсь с рассылкой и принимаю
+          <label for="lisence-agreement" class="order-form-checkbox">
+            <input
+              type="checkbox"
+              name="lisence"
+              id="lisence-agreement"
+              checked
+              class="order-form-input" />
+            Соглашаюсь с рассылкой и принимаю
             <a href="">Условия договора</a>
           </label>
-          <button type="submit" class="button">Отправить</button>
+
+          <button type="submit" class="button order-form-send">
+            Отправить
+          </button>
         </form>
       </div>
     </div>
