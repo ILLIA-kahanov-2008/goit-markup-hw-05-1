@@ -555,86 +555,84 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop" data-modal>
-      <!-- is-hidden -->
+    <div class="backdrop is-hidden" data-modal>
+      <!--  -->
       <div class="modal">
         <button class="close-btn" data-modal-close>
           <svg class="close-icon">
             <use href="./images/icons.svg#icon-close-form"></use>
           </svg>
         </button>
-        <h2 class="order-form-title">
-          Оставьте свои данные, мы вам перезвоним
-        </h2>
-        <form action="" class="order-form">
-          <div class="order-form-item">
-            <label for="customer-name" class="order-form-label">Имя
+        <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+        <form action="" class="order" autocomplete="off">
+          <div class="order-item">
+            <label for="customer-name" class="order-item-title">
+              Имя
+              <input
+                type="text"
+                name="name"
+                id="customer-name"
+                class="order-item-textfield"
+                required
+              />
               <svg class="icon icon-person">
-              <use href="./images/icons.svg#icon-person-focus"></use>
-            </svg>
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
             </label>
-            <input
-              type="text"
-              name="name"
-              id="customer-name"
-              class="order-form-field"
-            />
-            
           </div>
-          <div class="order-form-item">
-            <label for="customer-telefone" class="order-form-label"
-              >Телефон
+          <div class="order-item">
+            <label for="customer-phone" class="order-item-title">
+              Телефон
               <input
                 type="tel"
                 name="telefone"
-                id="customer-telefone"
-                class="order-form-field"
+                id="customer-phone"
+                class="order-item-textfield"
+                required
               />
-              <!-- <svg class="icon icon-telefone">
-                <use href="./images/icons.svg#icon-telefone"></use>
-              </svg> -->
+              <svg class="icon icon-phone">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
             </label>
           </div>
-          <div class="order-form-item">
-            <label for="customer-mail" class="order-form-label"
-              >Почта
+          <div class="order-item">
+            <label for="customer-mail" class="order-item-title">
+              Почта
               <input
                 type="email"
                 name="mail"
                 id="customer-mail"
-                class="order-form-field"
+                class="order-item-textfield"
               />
-              <span>
-                <svg class="icon icon-mail">
-                  <use href="./images/icons.svg#icon-mail-stroke"></use>
-                </svg>
-              </span>
+              <svg class="icon icon-email">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
             </label>
           </div>
-          <div class="order-form-item">
-            <label for="customer-comments" class="order-form-label"
-              >Комментарий
-              <textarea
-                name="comments"
-                id="customer-comments"
-                cols="30"
-                rows="6"
-                class="order-form-textarea"
-                placeholder="Введите текст"
-              ></textarea>
-            </label>
-          </div>
+          <label for="customer-comments" class="order-item-title">
+            Комментарий
+            <textarea
+              name="comments"
+              id="customer-comments"
+              cols="30"
+              rows="6"
+              class="order-item-textarea"
+              placeholder="Введите текст"
+            ></textarea>
+          </label>
           <label for="lisence-agreement" class="order-form-checkbox">
             <input
               type="checkbox"
               name="lisence"
               id="lisence-agreement"
-              checked
-              class="order-form-input" />
-            Соглашаюсь с рассылкой и принимаю
-            <a href="">Условия договора</a>
+              class="lisence-checkbox"
+            />
+            <span class="checkbox-icon"></span>
+            <span class="lisence-agreement"
+              >Соглашаюсь с рассылкой и принимаю
+              <a href="">Условия договора</a>
+            </span>
           </label>
-
           <button type="submit" class="button order-form-send">
             Отправить
           </button>
