@@ -656,7 +656,7 @@ input {
   transition: transform var(--animation), opacity var(--animation);
 }
 .portfolio-item-link:hover .portfolio-overlay-bg,
-.portfolio-item-link:focus .portfolio-overlay-text {
+.portfolio-item-link:focus .portfolio-overlay-bg {
   transform: translateY(-100%);
   opacity: 1;
 }
