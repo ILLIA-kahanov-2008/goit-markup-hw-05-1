@@ -300,7 +300,7 @@ input {
   background-image: url(../images/features/astronaut.png);
 }
 .features-item-title,
-.footer-title,
+.footer-item-title,
 .work-about-item-title {
   margin-bottom: 10px;
   font-weight: 700;
@@ -328,9 +328,10 @@ input {
   width: 100%;
   bottom: 0;
   margin: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
-  text-align: center;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--white-color);
   background-image: linear-gradient(
     rgba(47, 48, 58, 0.8),
@@ -527,6 +528,7 @@ input {
   -moz-appearance: none;          */
 }
 .checkbox-icon {
+  position: relative;
   display: inline-block;
   width: 16px;
   height: 15px;
@@ -534,16 +536,25 @@ input {
   border-radius: 4px;
   margin-right: 9px;
 }
-.lisence-checkbox:checked + .checkbox-icon {
-  border-color: var(--accent-color);
-  background-image: url(../images/icons.svg/#icon-check);
-  background-color: var(--accent-color);
-
-  background-origin: border-box;
-  background-size: contain;
-  /* background-position: center;
-  background-repeat: no-repeat; */
+.icon-check {
+  position: absolute;
+  display: inline-block;
+  top: -2px;
+  left: -2px;
+  width: 16px;
+  height: 15px;
+  fill:transparent;
 }
+.lisence-checkbox:checked ~ .checkbox-icon {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  background-origin: border-box;
+}
+.lisence-checkbox:checked ~ .checkbox-icon .icon-check {
+  fill: var(--white-color);
+  stroke: var(--white-color);
+}
+
 /* --form-send-button-- */
 .order-form-send {
   position: absolute;
@@ -627,10 +638,15 @@ input {
   font-size: 16px;
   line-height: 1.875;
 }
-.portfolio-overlay-text {
+
+.portfolio-overlay-bg {
   position: absolute;
   opacity: 0;
-  padding: 63px 24px;
+  height: 294px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;  
   font-weight: 400;
   font-size: 18px;
   line-height: 1.556;
@@ -639,7 +655,7 @@ input {
   background-color: rgba(33, 150, 243, 0.9);
   transition: transform var(--animation), opacity var(--animation);
 }
-.portfolio-item-link:hover .portfolio-overlay-text,
+.portfolio-item-link:hover .portfolio-overlay-bg,
 .portfolio-item-link:focus .portfolio-overlay-text {
   transform: translateY(-100%);
   opacity: 1;
