@@ -619,7 +619,7 @@ input {
   transition: box-shadow var(--animation);
 }
 .portfolio-item-link:hover,
-.portfolio-item-link:focus-within {
+.portfolio-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -646,20 +646,23 @@ input {
   display: flex;
   align-items: center;
   padding-left: 24px;
-  padding-right: 24px;  
+  padding-right: 24px;    
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform var(--animation), opacity var(--animation);
+}
+.portfolio-item-link:hover .portfolio-overlay-bg,
+.portfolio-item-link:focus .portfolio-overlay-bg {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+.portfolio-overlay-text {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.556;
   letter-spacing: 0.03em;
   color: var(--white-color);
-  background-color: rgba(33, 150, 243, 0.9);
-  transition: transform var(--animation), opacity var(--animation);
 }
-.portfolio-item-link:hover .portfolio-overlay-bg,
-.portfolio-item-link:focus-within .portfolio-overlay-bg {
-  transform: translateY(-100%);
-  opacity: 1;
-}
+
 /* --footer-- */
 .footer {
   background-color: var(--dark-bg-color);
